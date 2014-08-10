@@ -21,7 +21,7 @@ namespace MailGame
 
         private static void play()
         {
-            AutomationElement mainWnd;
+            AutomationElement mainWnd = null;
 
             getOutlookWindow(ref mainWnd);
             openNewEmail(mainWnd);
@@ -31,7 +31,7 @@ namespace MailGame
         {
             PropertyCondition idCond;
             AutomationElement element;
-            idCond = new PropertyCondition(AutomationElement.AutomationIdProperty, NextBtnID);
+            idCond = new PropertyCondition(AutomationElement.AutomationIdProperty, 999);
             element = mainWnd.FindFirst(TreeScope.Descendants, idCond);
             while (element == null)
             {
